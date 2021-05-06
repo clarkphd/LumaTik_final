@@ -14,7 +14,9 @@ import android.widget.Toast;
 //Activity contains a new profile button for new user appearance
 //Activity contains a use existing button for continued use
 
+@SuppressWarnings("UnusedDeclaration")
 public class WelcomeScreenActivity extends AppCompatActivity {
+
 
     private static final String TAG = "com.example.lumatik.WelcomeScreenActivity";
 
@@ -35,7 +37,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
     }
 
     public void onUseExistingClicked(View view) {
-        toastmsg("Not yet implemented.");
+        //toastmsg("Not yet implemented."); // Yes it is?
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("startBT", false);
         startActivity(intent);
@@ -46,6 +48,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
         if(isMyServiceRunning(DataTransferForegroundService.class)) { stopService(new Intent(getApplicationContext(), DataTransferForegroundService.class)); }
     }
 
+    @SuppressWarnings("SameParameterValue")
     private boolean isMyServiceRunning(Class<?> serviceClass) {
         ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {

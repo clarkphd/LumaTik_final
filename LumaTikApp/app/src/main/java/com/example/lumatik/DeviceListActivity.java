@@ -19,19 +19,19 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Set;
 
+@SuppressWarnings({"unchecked", "RawUseOfParameterizedClass", "serial", "rawtypes"})
 public class DeviceListActivity extends AppCompatActivity {
 
     private static final String TAG = "com.example.lumatik.DeviceListActivity";
 
+    private static final int BACK_START = 2;
     private static final int SETUP_START = 1;
     private static final int SETTINGS_START = 0;
     private int enterState = SETUP_START;
 
-    public static final String EXTRA_MESSAGE = "com.example.lumatikbasic.BT_ADDRESS";
     private static final int BT_ENABLE = 1;
 
     private BluetoothAdapter bluetoothAdapter = null;
-    private Set<BluetoothDevice> bDevices;
 
     ListView deviceList;
 
@@ -71,7 +71,6 @@ public class DeviceListActivity extends AppCompatActivity {
             setResult(RESULT_CANCELED);
             finish();
         }
-        //TODO: set notification to remind user to connect to Lumatik
     }
 
     @Override
@@ -96,8 +95,8 @@ public class DeviceListActivity extends AppCompatActivity {
     }
 
     private void checkBoundAndShow() {
-        bDevices = bluetoothAdapter.getBondedDevices();
-        ArrayList<String> list = new ArrayList();
+        Set<BluetoothDevice> bDevices = bluetoothAdapter.getBondedDevices();
+        ArrayList<String> list = new ArrayList<>();
 
         if (bDevices.size() > 0) {
             for (BluetoothDevice bt : bDevices) {
@@ -122,26 +121,33 @@ public class DeviceListActivity extends AppCompatActivity {
         deviceList.setOnItemClickListener(listClickListener);
     }
 
-    private AdapterView.OnItemClickListener listClickListener = new AdapterView.OnItemClickListener() {
-
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            String info = ((TextView) view).getText().toString();
-            String address = info.substring(info.length()-17);
-            Context context = getApplicationContext();
-            SharedPreferences sharedPreferences = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("bt_address", address);
-            editor.apply();
-            if (enterState == SETUP_START) {
-                Intent intent = new Intent(DeviceListActivity.this, MainActivity.class);
-                intent.putExtra("startBT", true);
-                startActivity(intent);
-                finish();
-            } else if (enterState == SETTINGS_START) {
-                setResult(RESULT_OK);
-                finish();
-            }
+    private final AdapterView.OnItemClickListener listClickListener = (parent, view, position, id) -> {
+        String info = ((TextView) view).getText().toString();
+        String address = info.substring(info.length()-17);
+        Context context = getApplicationContext();
+        SharedPreferences sharedPreferences = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("bt_address", address);
+        editor.apply();
+        if (enterState == SETUP_START) {
+            Intent intent = new Intent(DeviceListActivity.this, MainActivity.class);
+            intent.putExtra("startBT", true);
+            startActivity(intent);
+            finish();
+        } else if (enterState == SETTINGS_START) {
+            setResult(RESULT_OK);
+            finish();
         }
     };
+
+    @Override
+    public void onBackPressed() {
+        if (enterState == SETTINGS_START) {
+            super.onBackPressed();
+        } else {
+            Intent intent = new Intent(this, ExposureActivity.class);
+            intent.putExtra("StartFrom", BACK_START);
+            startActivity(intent);
+        }
+    }
 }

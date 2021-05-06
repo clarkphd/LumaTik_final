@@ -11,126 +11,130 @@
         android:id="@+id/applyExposureBut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
         android:onClick="onApplyClicked"
         android:text="@string/apply_exposure"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lowerLimbExposure" />
 
     <TextView
         android:id="@+id/pageInformation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/exposureInformationText"
+        app:layout_constraintBottom_toTopOf="@+id/template1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/template4"
-        android:layout_width="65dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:importantForAccessibility="no"
-        android:tag="template4"
         android:onClick="onTemplateClicked"
+        android:tag="template4"
+        app:layout_constraintBottom_toBottomOf="@+id/template3"
         app:layout_constraintEnd_toStartOf="@+id/template5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/template3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:layout_constraintTop_toTopOf="@+id/template3"
+        app:srcCompat="@drawable/short_long_template" />
 
     <ImageButton
         android:id="@+id/template1"
-        android:layout_width="65dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:importantForAccessibility="no"
-        android:tag="template1"
         android:onClick="onTemplateClicked"
+        android:tag="template1"
+        app:layout_constraintBottom_toTopOf="@+id/hat"
         app:layout_constraintEnd_toStartOf="@+id/template2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:layout_constraintTop_toBottomOf="@+id/pageInformation"
+        app:srcCompat="@drawable/no_short_template" />
 
     <ImageButton
         android:id="@+id/template2"
-        android:layout_width="65dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:importantForAccessibility="no"
-        android:tag="template2"
         android:onClick="onTemplateClicked"
+        android:tag="template2"
+        app:layout_constraintBottom_toBottomOf="@+id/template1"
         app:layout_constraintEnd_toStartOf="@+id/template3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/template1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:layout_constraintTop_toTopOf="@+id/template1"
+        app:srcCompat="@drawable/short_short_template" />
 
     <ImageButton
         android:id="@+id/template3"
-        android:layout_width="65dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:importantForAccessibility="no"
-        android:tag="template3"
         android:onClick="onTemplateClicked"
+        android:tag="template3"
+        app:layout_constraintBottom_toBottomOf="@+id/template2"
         app:layout_constraintEnd_toStartOf="@+id/template4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/template2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:layout_constraintTop_toTopOf="@+id/template2"
+        app:srcCompat="@drawable/long_short_template" />
 
     <ImageButton
         android:id="@+id/template5"
-        android:layout_width="65dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:importantForAccessibility="no"
-        android:tag="template5"
         android:onClick="onTemplateClicked"
+        android:tag="template5"
+        app:layout_constraintBottom_toBottomOf="@+id/template4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/template4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:layout_constraintTop_toTopOf="@+id/template4"
+        app:srcCompat="@drawable/long_long_template" />
 
     <TextView
         android:id="@+id/hat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="167dp"
         android:text="@string/hat"
+        app:layout_constraintBottom_toTopOf="@+id/face"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/template1" />
 
     <TextView
         android:id="@+id/gloves"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="208dp"
         android:text="@string/gloves"
+        app:layout_constraintBottom_toTopOf="@+id/Shoes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/face" />
 
     <CheckBox
         android:id="@+id/hasHat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/hat"
+        app:layout_constraintEnd_toEndOf="@+id/faceCovered"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/hat" />
 
     <CheckBox
         android:id="@+id/hasShoes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/faceCovered"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintBaseline_toBaselineOf="@+id/Shoes"
         app:layout_constraintStart_toEndOf="@+id/Shoes" />
 
@@ -138,7 +142,8 @@
         android:id="@+id/hasGloves"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/faceCovered"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintBaseline_toBaselineOf="@+id/gloves"
         app:layout_constraintStart_toEndOf="@+id/gloves" />
 
@@ -147,66 +152,86 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="248dp"
         android:text="@string/shoes"
+        app:layout_constraintBottom_toTopOf="@+id/upperLimbExposure"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/gloves" />
 
     <TextView
         android:id="@+id/upperLimbExposure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="312dp"
         android:text="@string/upper_limb_exposure"
+        app:layout_constraintBottom_toTopOf="@+id/upperBodyExposure"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/Shoes" />
 
     <TextView
         android:id="@+id/lowerLimbExposure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="402dp"
         android:text="@string/lower_limb_exposure"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/applyExposureBut"
+        app:layout_constraintEnd_toEndOf="@+id/upperBodyExposure"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/upperBodyExposure"
+        app:layout_constraintTop_toBottomOf="@+id/upperBodyExposure" />
 
     <TextView
         android:id="@+id/upperBodyExposure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="356dp"
         android:text="@string/upper_body_exposure"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/lowerLimbExposure"
+        app:layout_constraintEnd_toEndOf="@+id/upperLimbExposure"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/upperLimbExposure"
+        app:layout_constraintTop_toBottomOf="@+id/upperLimbExposure" />
 
     <Spinner
         android:id="@+id/upperLimbSpinner"
-        android:layout_width="235dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="310dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:entries="@array/arm_array"
+        app:layout_constraintBaseline_toBaselineOf="@+id/upperLimbExposure"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/upperLimbExposure" />
 
     <Spinner
         android:id="@+id/upperBodySpinner"
-        android:layout_width="235dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="356dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:entries="@array/body_array"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/upperBodyExposure"
+        app:layout_constraintEnd_toEndOf="@+id/upperLimbSpinner"
+        app:layout_constraintStart_toStartOf="@+id/upperLimbSpinner" />
 
     <Spinner
         android:id="@+id/lowerLimbSpinner"
-        android:layout_width="235dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="402dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:entries="@array/lower_body_array"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/lowerLimbExposure"
+        app:layout_constraintEnd_toEndOf="@+id/upperBodySpinner"
+        app:layout_constraintStart_toStartOf="@+id/upperBodySpinner" />
+
+    <TextView
+        android:id="@+id/face"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/face_in_shade"
+        app:layout_constraintBottom_toTopOf="@+id/gloves"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hat" />
+
+    <CheckBox
+        android:id="@+id/faceCovered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/face"
+        app:layout_constraintStart_toEndOf="@+id/face"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,15 +9,15 @@
 
     <ImageView
         android:id="@+id/lumatikLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:layout_constraintVertical_chainStyle="spread"
+        app:srcCompat="@mipmap/lumatik_logo" />
 
     <TextView
         android:id="@+id/textView"
@@ -46,26 +46,32 @@
         android:id="@+id/existingProfile"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:text="Use Existing Profile"
         android:onClick="onUseExistingClicked"
-        app:layout_constraintBottom_toTopOf="@+id/killService"
+        android:text="Use Existing Profile"
+        app:layout_constraintBottom_toTopOf="@+id/space2"
         app:layout_constraintEnd_toEndOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/killService"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/existingProfile" />
+
     <Button
         android:id="@+id/killService"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:text="Kill Foreground Service"
         android:onClick="killServiceClicked"
+        android:text="Kill Foreground Service"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/existingProfile"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/existingProfile"
-        app:layout_constraintTop_toBottomOf="@+id/existingProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/space2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

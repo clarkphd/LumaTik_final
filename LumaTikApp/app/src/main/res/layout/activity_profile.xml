@@ -11,115 +11,138 @@
         android:id="@+id/apply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:layout_marginBottom="599dp"
         android:text="@string/welcomeProfile"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/age"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TimePicker
         android:id="@+id/bedtimePicker"
-        android:layout_width="244dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="368dp"
+        android:layout_width="160dp"
+        android:layout_height="148dp"
         android:timePickerMode="spinner"
+        app:layout_constraintBottom_toBottomOf="@+id/bedtime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/bedtime"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/bedtime" />
 
     <TextView
         android:id="@+id/age"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
+        android:layout_marginStart="16dp"
         android:text="@string/age"
         android:textAlignment="center"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/editAge"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toTopOf="@+id/skin_pigment"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/apply" />
 
     <EditText
         android:id="@+id/editAge"
         android:layout_width="89dp"
         android:layout_height="52dp"
-        android:layout_marginEnd="240dp"
         android:autofillHints=""
         android:ems="10"
         android:importantForAccessibility="no"
         android:inputType="numberSigned"
-        app:layout_constraintBaseline_toBaselineOf="@+id/age"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/age"
+        app:layout_constraintTop_toTopOf="@+id/age"
+        app:layout_constraintVertical_bias="0.484" />
 
     <TextView
         android:id="@+id/skin_pigment"
-        android:layout_width="169dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="299dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/skin_pigment_fitzpatrick"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/wakeup"
+        app:layout_constraintStart_toStartOf="@+id/age"
+        app:layout_constraintTop_toBottomOf="@+id/age" />
 
     <Spinner
         android:id="@+id/typeSelector"
-        android:layout_width="154dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="292dp"
-        android:layout_marginEnd="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:entries="@array/fitzpatrick"
+        app:layout_constraintBottom_toBottomOf="@+id/skin_pigment"
+        app:layout_constraintEnd_toStartOf="@+id/infoFitzpatrick"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/skin_pigment"
+        app:layout_constraintTop_toTopOf="@+id/skin_pigment"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/infoFitzpatrick"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@null"
+        android:onClick="onInfoClicked"
+        app:layout_constraintBottom_toBottomOf="@+id/typeSelector"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/typeSelector"
+        app:layout_constraintTop_toTopOf="@+id/typeSelector"
+        app:srcCompat="@android:drawable/ic_menu_info_details" />
 
     <TextView
         android:id="@+id/bedtime"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="392dp"
+        android:layout_marginStart="16dp"
         android:text="@string/normal_bedtime"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/bedtimePicker"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/space" />
 
     <TimePicker
         android:id="@+id/waketimePicker"
-        android:layout_width="243dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="460dp"
+        android:layout_width="160dp"
+        android:layout_height="148dp"
         android:timePickerMode="spinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/wakeup"
+        app:layout_constraintEnd_toEndOf="@+id/bedtimePicker"
+        app:layout_constraintStart_toStartOf="@+id/bedtimePicker"
+        app:layout_constraintTop_toTopOf="@+id/wakeup" />
 
     <TextView
         android:id="@+id/wakeup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="485dp"
+        android:layout_marginStart="16dp"
         android:text="@string/normal_wakeup_time"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/waketimePicker"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintBottom_toTopOf="@+id/space"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/skin_pigment" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
         android:onClick="onApplyClicked"
         android:text="@string/apply_profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bedtime" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bedtime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wakeup" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
