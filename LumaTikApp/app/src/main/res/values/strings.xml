@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Lumatik Control Centre</string>
+    <color name="bckgndCol">#ffffffcc</color>
+    <string name="welcome_to_lumatik">Welcome to Lumatik</string>
+    <string name="enter_lumatikbutton">Setup Profile</string>
+    <string name="welcomeProfile">Welcome to Lumatik\n Please setup your profile to help us optimise your light.</string>
+    <string name="skin_pigment_fitzpatrick">Skin Pigment (Fitzpatrick): </string>
+    <string name="normal_bedtime">Normal Bedtime:</string>
+    <string name="normal_wakeup_time">Normal Wakeup Time:</string>
+    <string name="age">Age:</string>
+    <string name="apply_profile">Apply Profile</string>
+    <string name="apply_exposure">Apply Exposure</string>
+    <string name="exposureInformationText">Insert Text here to explain exposure templates etc</string>
+    <string name="deviceListInformation">List of currently paired devices. \nSelect from list or skip this step.</string>
+    <string name="skip_button">Skip Connect</string>
+
+    <string name = "preference_file_key">com.example.lumatik.PREFERENCE_FILE_KEY</string>
+    <string name = "bt_connected">"isBTConnected"</string>
+    <string name="upper_body_exposure">Upper Body Exposure</string>
+    <string name="hat">Hat:</string>
+    <string name="gloves">Gloves:</string>
+    <string name="shoes">Shoes:</string>
+    <string name="upper_limb_exposure">Upper Limb Exposure</string>
+    <string name="lower_limb_exposure">Lower Limb Exposure</string>
+
+
+    <string name="profile">Profile</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="exposureToday">Today\'s Exposure</string>
+
+    <string-array name="fitzpatrick">
+        <item>Type I</item>
+        <item>Type II</item>
+        <item>Type III</item>
+        <item>Type IV</item>
+        <item>Type V</item>
+        <item>Type VI ***Not Implemented***</item>
+    </string-array>
+
+    <string-array name="arm_array">
+        <item>No Arm Covered</item>
+        <item>Half Arm Covered</item>
+        <item>Full Arm Covered</item>
+    </string-array>
+    <string-array name="body_array">
+        <item>No Coverage</item>
+        <item>Half Coverage</item>
+        <item>Full Coverage</item>
+    </string-array>
+    <string-array name="lower_body_array">
+        <item>No Leg Covered</item>
+        <item>Half Leg Covered</item>
+        <item>Full Leg Covered</item>
+    </string-array>
+
+    <array name="coverage_values">
+        <item>0</item> <!--Full coverage-->
+        <item>1</item> <!--Half coverage-->
+        <item>2</item> <!--No coverage-->
+    </array>
+</resources>
