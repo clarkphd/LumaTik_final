@@ -1,0 +1,9 @@
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT lumatiksite.wsgi
+
+beta_settings:
+  cloud_sql_instances: sturdy-apricot-305816:europe-west2:lumatik-01
+
+runtime_config:
+  python_version: 3
